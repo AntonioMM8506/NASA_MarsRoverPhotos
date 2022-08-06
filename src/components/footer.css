@@ -1,0 +1,25 @@
+.footer {
+    position: absolute;
+    bottom: 0;
+
+    flex: 1;
+    justify-content: flex-end;
+    width: 100%;
+    background-color: #1d2025;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Link Styles */
+a{
+    color: white;
+    font-weight: bold;
+}
+a:link {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
