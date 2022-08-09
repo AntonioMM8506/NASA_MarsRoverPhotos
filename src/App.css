@@ -6,16 +6,20 @@
 }
 
 .App-logo {
+  float: left;
   height: 20vmin;
   width: 20vmin;
-  pointer-events: none;
 }
 
+.App-title{
+  position: relative;
+  top: 18px;
+  left: 100px;
+}
 
 .App-header {
   display: flex;
-  flex-direction: column;
-  align-items: left;
+  align-items: center;
   justify-content: left;
   font-size: calc(10px + 2vmin);
   color: white;
@@ -37,10 +41,12 @@
   width: 75%;
 }
 
+/* Link and button styles .......................................................*/
 a{
   color: white;
   font-weight: bold;
 }
+
 a:link {
   text-decoration: none;
 }
@@ -48,3 +54,8 @@ a:link {
 a:hover {
   text-decoration: underline;
 }
+
+.table button{
+  min-width:100%;
+}
+
