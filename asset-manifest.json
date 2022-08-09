@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/NASA_MarsRoverPhotos/static/css/main.046e87ee.css",
-    "main.js": "/NASA_MarsRoverPhotos/static/js/main.fe2b8dc4.js",
+    "main.css": "/NASA_MarsRoverPhotos/static/css/main.6e42cb35.css",
+    "main.js": "/NASA_MarsRoverPhotos/static/js/main.a86593f7.js",
     "static/js/787.816c074e.chunk.js": "/NASA_MarsRoverPhotos/static/js/787.816c074e.chunk.js",
     "static/media/NASA_logo.png": "/NASA_MarsRoverPhotos/static/media/NASA_logo.0c1ab885a12b684b15c1.png",
     "index.html": "/NASA_MarsRoverPhotos/index.html",
-    "main.046e87ee.css.map": "/NASA_MarsRoverPhotos/static/css/main.046e87ee.css.map",
-    "main.fe2b8dc4.js.map": "/NASA_MarsRoverPhotos/static/js/main.fe2b8dc4.js.map",
+    "main.6e42cb35.css.map": "/NASA_MarsRoverPhotos/static/css/main.6e42cb35.css.map",
+    "main.a86593f7.js.map": "/NASA_MarsRoverPhotos/static/js/main.a86593f7.js.map",
     "787.816c074e.chunk.js.map": "/NASA_MarsRoverPhotos/static/js/787.816c074e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.046e87ee.css",
-    "static/js/main.fe2b8dc4.js"
+    "static/css/main.6e42cb35.css",
+    "static/js/main.a86593f7.js"
   ]
 }
