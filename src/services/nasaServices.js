@@ -18,9 +18,10 @@ export function GetPhotos(props){
                 //console.log("Retrieved", retrievedPhotos);
             })
             .catch( err => {
-                if(err.code === 'ERR_BAD_REQUEST'){
-                    setEMessage('Sorry. Try again later.')
-                }
+                //console.log = console.warn = console.error = () => {}; //To empty all the warn and error messages
+                console.clear();
+                setEMessage('Sorry. Try again later.')
+                
             })
     }, [cameraPhotos, retrievedPhotos, props.name, eMessage]);
 
@@ -31,7 +32,6 @@ export function GetPhotos(props){
             width='100%' height='120px' alt="img"></img></td>)
     }                    
     
-
     let m = 1;
     let rows = [];
     let temp = [];
@@ -46,13 +46,12 @@ export function GetPhotos(props){
     }
 
     return(
-        
-            <table>
-                <tbody>
-                    { retrievedPhotos.length ? rows : eMessage.length ?<tr><td>{eMessage}</td></tr> :<tr><td><span>Loading...</span></td></tr> }
-                </tbody>
-            </table>
-        
+        <table>
+            <tbody>
+                { retrievedPhotos.length ? rows : eMessage.length ? <tr><td>{ eMessage }</td></tr> : 
+                <tr><td><span>Loading...</span></td></tr> }
+            </tbody>
+        </table>
     )
 
 }//End of GetPhotos

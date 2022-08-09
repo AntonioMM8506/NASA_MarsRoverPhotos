@@ -51,7 +51,7 @@ function App() {
 
         {/*MAST*/}
         <tr>
-          <td><button onClick={() => setMASTDisplayed(true)} className={ rhazDisplayed ? 'button-s':''}>
+          <td><button onClick={() => setMASTDisplayed(true)} className={ mastDisplayed ? 'button-s':''}>
               Mast Camera</button></td>
           { mastDisplayed ?(<td><GetPhotos name='mast'></GetPhotos></td>) : (<td></td>) }
         </tr>
