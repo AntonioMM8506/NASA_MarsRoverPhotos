@@ -21,7 +21,6 @@ export function GetPhotos(props){
                 //console.log = console.warn = console.error = () => {}; //To empty all the warn and error messages
                 console.clear();
                 setEMessage('Sorry. Try again later.')
-                
             })
     }, [cameraPhotos, retrievedPhotos, props.name, eMessage]);
 

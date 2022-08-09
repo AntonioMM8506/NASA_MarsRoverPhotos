@@ -31,8 +31,8 @@ function App() {
     <table className="table">
       <tbody>
         <tr>
-          <th className=".table-row1">Curiosity Cameras</th>
-          <th className=".table-row2">Pictures</th>
+          <th className="table-row1">Curiosity Cameras</th>
+          <th className="table-row2">Pictures</th>
         </tr>
 
         {/*FHAZ*/}
@@ -43,7 +43,7 @@ function App() {
         </tr>
 
         {/*RHAZ*/}
-        <tr>
+        <tr className=".table-row2">
           <td><button onClick={() => setRHAZDisplayed(true)} className={ rhazDisplayed ? 'button-s':''}>
               Rear Hazard Avoidance Camera</button></td>
           { rhazDisplayed ?(<GetPhotos name='rhaz'></GetPhotos>) : (<td></td>) }
