@@ -1,4 +1,3 @@
-import REACT_APP_KEYS from './env.json';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
@@ -6,10 +5,11 @@ import React, { useEffect, useState } from 'react';
 export function GetPhotos(props){
     const [ cameraPhotos, setCameraPhotos] = useState([]);
     const [retrievedPhotos, setRetrievedPhotos] = useState([]);
+    const [eMessage, setEMessage] = useState('');
     
     useEffect(() =>{
         axios
-            .get(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&z&camera=${props.name}&api_key=${REACT_APP_KEYS.NASA_API_KEY}`)
+            .get(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&z&camera=${props.name}&api_key=${process.env.REACT_APP_NASA_API_KEY}`)
             .then( res => {
                 setCameraPhotos(res.data);
                 setRetrievedPhotos((cameraPhotos.photos.length>21) ? cameraPhotos.photos.slice(0,20) : cameraPhotos.photos);
@@ -18,14 +18,17 @@ export function GetPhotos(props){
                 //console.log("Retrieved", retrievedPhotos);
             })
             .catch( err => {
-                console.log(err);
+                if(err.code === 'ERR_BAD_REQUEST'){
+                    setEMessage('Sorry. Try again later.')
+                }
             })
-    }, [cameraPhotos, retrievedPhotos, props.name]);
+    }, [cameraPhotos, retrievedPhotos, props.name, eMessage]);
 
     
     let cols = [];
     for(let j=0; j<retrievedPhotos.length; j++){
-        cols.push(<td><img src={retrievedPhotos[j].img_src} width='100px' height='100px' alt="img"></img></td>)
+        cols.push(<td><img key={retrievedPhotos[j].id} src={retrievedPhotos[j].img_src} 
+            width='100%' height='120px' alt="img"></img></td>)
     }                    
     
 
@@ -43,13 +46,13 @@ export function GetPhotos(props){
     }
 
     return(
-        <div>
+        
             <table>
                 <tbody>
-                    { retrievedPhotos.length ? rows : <span>Loading...</span> }
+                    { retrievedPhotos.length ? rows : eMessage.length ?<tr><td>{eMessage}</td></tr> :<tr><td><span>Loading...</span></td></tr> }
                 </tbody>
             </table>
-        </div>
+        
     )
 
 }//End of GetPhotos

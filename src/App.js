@@ -8,7 +8,7 @@ import { GetPhotos } from './services/nasaServices';
 
 
 function App() {
-  
+
   //Hooks
   const [fhazDisplayed, setFHAZDisplayed] = useState(false); //fhaz
   const [rhazDisplayed, setRHAZDisplayed] = useState(false); //rhaz
@@ -17,6 +17,7 @@ function App() {
   const [mahliDisplayed, setMAHLIDisplayed] = useState(false); //mahli
   const [mardiDisplayed, setMARDIDisplayed] = useState(false); //mardi
   const [navcamDisplayed, setNAVCAMDisplayed] = useState(false); //navcam
+
 
   //Render ..........................................................................
   return (
@@ -36,43 +37,50 @@ function App() {
 
         {/*FHAZ*/}
         <tr>
-          <td><button onClick={() => setFHAZDisplayed(true)}>Front Hazard Avoidance Camera</button></td>
+          <td><button onClick={() => setFHAZDisplayed(true)} className={fhazDisplayed ? 'button-s':''}>
+              Front Hazard Avoidance Camera</button></td>
           { fhazDisplayed ?(<td><GetPhotos name='fhaz'></GetPhotos></td>) : (<td></td>) }
         </tr>
 
         {/*RHAZ*/}
         <tr>
-          <td><button onClick={() => setRHAZDisplayed(true)}>Rear Hazard Avoidance Camera</button></td>
+          <td><button onClick={() => setRHAZDisplayed(true)} className={ rhazDisplayed ? 'button-s':''}>
+              Rear Hazard Avoidance Camera</button></td>
           { rhazDisplayed ?(<GetPhotos name='rhaz'></GetPhotos>) : (<td></td>) }
         </tr>
 
         {/*MAST*/}
         <tr>
-          <td><button onClick={() => setMASTDisplayed(true)}>Mast Camera</button></td>
+          <td><button onClick={() => setMASTDisplayed(true)} className={ rhazDisplayed ? 'button-s':''}>
+              Mast Camera</button></td>
           { mastDisplayed ?(<td><GetPhotos name='mast'></GetPhotos></td>) : (<td></td>) }
         </tr>
 
         {/*CHEMCAM*/}
         <tr>
-          <td><button onClick={() => setCHEMCAMDisplayed(true)}>Chemistry and Camera Complex</button></td>
+          <td><button onClick={() => setCHEMCAMDisplayed(true)} className={ chemcamDisplayed ? 'button-s':''}>
+              Chemistry and Camera Complex</button></td>
           { chemcamDisplayed ?(<td><GetPhotos name='chemcam'></GetPhotos></td>) : (<td></td>) }
         </tr>
 
         {/*MAHLI*/}
         <tr>
-          <td><button onClick={() => setMAHLIDisplayed(true)}>Mars Hand Lens Imager</button></td>
+          <td><button onClick={() => setMAHLIDisplayed(true)} className={ mahliDisplayed ? 'button-s':''}>
+              Mars Hand Lens Imager</button></td>
           { mahliDisplayed ?(<td><GetPhotos name='mahli'></GetPhotos></td>) : (<td></td>) }
         </tr>
 
         {/*MARDI*/}
         <tr>
-          <td><button onClick={() => setMARDIDisplayed(true)}>Mars Descent Imager</button></td>
+          <td><button onClick={() => setMARDIDisplayed(true)} className={ mardiDisplayed ? 'button-s':''}>
+              Mars Descent Imager</button></td>
           { mardiDisplayed ?(<td><GetPhotos name='mardi'></GetPhotos></td>) : (<td></td>) }
         </tr>
 
         {/*NAVCAM*/}
         <tr>
-          <td><button onClick={() => setNAVCAMDisplayed(true)}>Navigation Camera</button></td>
+          <td><button onClick={() => setNAVCAMDisplayed(true)} className={ navcamDisplayed ? 'button-s':''}>
+              Navigation Camera</button></td>
           { navcamDisplayed ?(<td><GetPhotos name='navcam'></GetPhotos></td>) : (<td></td>) }
         </tr>
       </tbody>
