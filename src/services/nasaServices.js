@@ -21,12 +21,8 @@ export function GetPhotos(props){
             .then( res => {
                 setCameraPhotos(res.data);
                 setRetrievedPhotos((cameraPhotos.photos.length>21) ? cameraPhotos.photos.slice(0,20) : cameraPhotos.photos);
-                //console.log("res", res);
-                //console.log("Photos", cameraPhotos);
-                //console.log("Retrieved", retrievedPhotos);
             })
             .catch( err => {
-                //console.log = console.warn = console.error = () => {}; //To empty all the warn and error messages
                 console.clear();
                 setEMessage('Sorry. Try again later.')
             })
