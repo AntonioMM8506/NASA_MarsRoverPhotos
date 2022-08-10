@@ -1,8 +1,11 @@
+import '@testing-library/jest-dom/extend-expect';
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import React from 'react';
 
-test('renders learn react link', () => {
+
+test('Title', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const appComponent = screen.getByText('');
+  expect(appComponent.h1).toHaveTextContent('Mars Rover Photos');
 });
