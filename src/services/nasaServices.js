@@ -2,14 +2,22 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
 
+const fetchData = async (camera) => {
+    try{
+        const response = await axios.request(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&z&camera=${camera}&api_key=${process.env.REACT_APP_NASA_API_KEY}`);
+        return response;
+    }
+    catch(error){ }
+}//End of fetchData
+
+
 export function GetPhotos(props){
     const [ cameraPhotos, setCameraPhotos] = useState([]);
     const [retrievedPhotos, setRetrievedPhotos] = useState([]);
     const [eMessage, setEMessage] = useState('');
     
     useEffect(() =>{
-        axios
-            .get(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&z&camera=${props.name}&api_key=${process.env.REACT_APP_NASA_API_KEY}`)
+        fetchData(props.name)
             .then( res => {
                 setCameraPhotos(res.data);
                 setRetrievedPhotos((cameraPhotos.photos.length>21) ? cameraPhotos.photos.slice(0,20) : cameraPhotos.photos);
@@ -22,14 +30,16 @@ export function GetPhotos(props){
                 console.clear();
                 setEMessage('Sorry. Try again later.')
             })
-    }, [cameraPhotos, retrievedPhotos, props.name, eMessage]);
+    }, [props.name, cameraPhotos, retrievedPhotos, eMessage]); //End of useEffect
 
+    
     
     let cols = [];
     for(let j=0; j<retrievedPhotos.length; j++){
         cols.push(<td><img key={retrievedPhotos[j].id} src={retrievedPhotos[j].img_src} 
-            width='100%' height='120px' alt="img"></img></td>)
+            width='100%' height='120px' alt="img"></img></td>);
     }                    
+    
     
     let m = 1;
     let rows = [];

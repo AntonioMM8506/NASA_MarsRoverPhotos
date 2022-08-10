@@ -1,7 +1,8 @@
 /* General styles --------------------------------------------------------- */
 .App {
   text-align: center;
-  background-color: #282c34;
+  /*background-color: #282c34;*/
+  background-image: url('../public/wallpaper_001.jpg');
   min-height: 200vh;
 }
 
@@ -20,7 +21,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(11px + 2vmin);
   color: white;
 }
 
@@ -28,17 +29,22 @@
 /* Table Style --------------------------------------------------------- */
 .table {
   width: 100%;
-  font-size: calc(10px + 1vmin);
   color: white;
 }
 
 .table-row1{
+  font-size: calc(15px + 1vmin);
   width: 25%;
 }
 
 .table-row2{
+  font-size: calc(15px + 1vmin);
   text-align: center;
   width: 75%;
+}
+
+tr>td {
+  padding-bottom: 1em;
 }
 
 /* Link and button styles .......................................................*/
@@ -56,7 +62,15 @@ a:hover {
 }
 
 .table button{
+  padding: 5px;
   min-width:100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: calc(7px + 1vmin);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 2px 2px rgb(0,0,0);
+  border-radius:10px;
+  background-color:#0a0a23;
+  color: #fff;
 }
 
 .button-s {

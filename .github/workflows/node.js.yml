@@ -1,11 +1,15 @@
 name: CI/CD
 
+#Triggers for the Actions.
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
 
+#For setting the environmental variables, the Action will create 
+#automatically an env file. The secret has to be added same as for
+#the Token for GitHub Actions
 env:
   REACT_APP_NASA_API_KEY: ${{ secrets.REACT_APP_NASA_API_KEY }}
 
