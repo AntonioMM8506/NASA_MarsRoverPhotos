@@ -6,6 +6,6 @@ import React from 'react';
 
 test('Title', () => {
   render(<App />);
-  const appComponent = screen.getByText('');
+  const appComponent = screen.getByText('Mars Rover Photos');
   expect(appComponent.h1).toHaveTextContent('Mars Rover Photos');
 });
