@@ -5,7 +5,8 @@ import React from 'react';
 
 
 test('Title', () => {
-  render(<App />);
-  const appComponent = screen.getByText('Mars Rover Photos');
-  expect(appComponent.h1).toHaveTextContent('Mars Rover Photos');
+  render(<App/>);
+  const title = screen.getByTestIs("title");
+
+  expect(title).toHaveTextContent("Mars Rover Photos");
 });

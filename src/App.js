@@ -25,7 +25,7 @@ function App() {
       
       <header className="App-header">
         <img src={logo} alt='logo' className="App-logo"></img>
-        <h1 className='App-title'>Mars Rover Photos</h1>
+        <h1 data-testid="title" className='App-title'>Mars Rover Photos</h1>
       </header>
 
     <table className="table">
