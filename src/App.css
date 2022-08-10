@@ -7,23 +7,23 @@
 
 .App-logo {
   float: left;
-  height: 20vmin;
-  width: 20vmin;
+  height: 25vmin;
+  width: 25vmin;
 }
 
 .App-title{
   position: relative;
-  top: 18px;
-  left: 100px;
+  text-align: center;
 }
 
 .App-header {
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
 
 /* Table Style --------------------------------------------------------- */
 .table {
