@@ -37,8 +37,8 @@ function App() {
 
         {/*FHAZ*/}
         <tr>
-          <td><button onClick={() => setFHAZDisplayed(true)} className={fhazDisplayed ? 'button-s':''}>
-              Front Hazard Avoidance Camera</button></td>
+          <td><button  data-testid="button_fhaz" onClick={() => setFHAZDisplayed(true)} 
+          className={fhazDisplayed ? 'button-s':''}>Front Hazard Avoidance Camera</button></td>
           { fhazDisplayed ?(<td><GetPhotos name='fhaz'></GetPhotos></td>) : (<td></td>) }
         </tr>
 
