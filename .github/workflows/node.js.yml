@@ -52,7 +52,9 @@ jobs:
 
       
     #For deploying the application. A token with a certain life time is added.
-    #The username and the email does not have to be necessary the real ones
+    #The username and the email does not have to be necessary the real ones.
+    #The npm commands run the application, there is one for the "production" deploy
+    #and the other one to run the tests.
     - name: Deploy
       run: |
         git config --global user.name $user_name
