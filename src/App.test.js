@@ -17,10 +17,10 @@ test('Buttons', () =>{
   const buttonFHAZ = screen.getByTestId("button_fhaz");//fhaz
   const buttonRHAZ = screen.getByTestId("button_rhaz");//rhaz
   const buttonMAST = screen.getByTestId("button_mast");//mast
-  const buttonCHEMCAM = screen.getByTestId("button_mast");;//chemcam
-  const buttonMAHLI = screen.getByTestId("button_mast");;//mahli
-  const buttonMARDI = screen.getByTestId("button_mast");;//mardi
-  const buttonNAVCAM = screen.getByTestId("button_mast");;//navcam
+  const buttonCHEMCAM = screen.getByTestId("button_chemcam");;//chemcam
+  const buttonMAHLI = screen.getByTestId("button_mahli");;//mahli
+  const buttonMARDI = screen.getByTestId("button_mardi");;//mardi
+  const buttonNAVCAM = screen.getByTestId("button_navcam");;//navcam
 
   expect(buttonFHAZ).toHaveTextContent("Front Hazard Avoidance Camera");
   expect(buttonRHAZ).toHaveTextContent("Rear Hazard Avoidance Camera");
